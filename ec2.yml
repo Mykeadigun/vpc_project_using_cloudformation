@@ -1,0 +1,37 @@
+Instance1:
+  Type: AWS::EC2::Instance
+  Properties: 
+    BlockDeviceMappings: 
+      - DeviceName: /dev/xvda
+        Ebs: 
+          VolumeType: gp3
+          Iops: 3000
+          DeleteOnTermination: true
+          VolumeSize: 8
+    ImageId: "ami-085ad6ae776d8f09c"
+    InstanceType: t2.micro
+    KeyName: "terraform.key"
+    SecurityGroupIds: !Ref SecurityGroup
+    SubnetId: !Ref PublicSubnet
+    Tags: 
+      - Key: Name
+        Value: instanceproject
+
+Instance2:
+  Type: AWS::EC2::Instance
+  Properties: 
+    BlockDeviceMappings: 
+      - DeviceName: /dev/xvda
+        Ebs: 
+          VolumeType: gp3
+          Iops: 3000
+          DeleteOnTermination: true
+          VolumeSize: 8
+    ImageId: "ami-085ad6ae776d8f09c"
+    InstanceType: t2.micro
+    KeyName: "terraform.key"
+    SecurityGroupIds: !Ref SecurityGroup
+    SubnetId: !Ref PrivateSubnet
+    Tags: 
+      - Key: Name
+        Value: instanceproject        
