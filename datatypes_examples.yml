@@ -1,0 +1,17 @@
+#key value pair
+name: akin
+sex: male
+
+#list
+students:
+  -sola
+  -toby
+
+#Dictionary
+mike:  
+  course:
+    english: 70
+    maths: 100
+  friends:
+    malik: newyork
+    bobby: uk
